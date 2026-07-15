@@ -149,9 +149,7 @@ else if (
         // SEND REQUEST
 
         const startTime = performance.now();
-        console.log("Auth received:", auth);
-console.log("Final headers:", headers);
-console.log("Target URL:", targetUrl.toString());
+        
         const response = await fetch(
             targetUrl.toString(),
             fetchConfig

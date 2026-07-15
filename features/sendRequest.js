@@ -27,9 +27,7 @@ export function initSendRequest() {
         const url =
             resolveEnvironmentVariables(rawUrl);
 
-            console.log("RAW URL:", rawUrl);
-console.log("RESOLVED URL:", url);
-console.log("SELECTED ENV:", document.getElementById("environmentSelect").value);
+            
         // Validate the raw URL before environment replacement to preserve current behavior.
         try {
             new URL(url);
@@ -118,7 +116,7 @@ console.log("SELECTED ENV:", document.getElementById("environmentSelect").value)
                 return response.json();
             })
             .then((data) => {
-                console.log("Backend response:", data);
+                
 
                 if (data.error) {
                     responseBody.textContent = data.error;

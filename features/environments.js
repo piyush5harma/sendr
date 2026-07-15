@@ -73,7 +73,7 @@ function createEnvironmentVariableRow(key = "", value = "") {
         "remove-environment-variable"
     );
 
-    removeButton.textContent = "Ã—";
+    removeButton.textContent = "×";
 
     row.appendChild(keyInput);
     row.appendChild(valueInput);
@@ -86,8 +86,7 @@ function createEnvironmentVariableRow(key = "", value = "") {
 export function resolveEnvironmentVariables(value) {
     const selectedEnvironment =
         environmentSelect.value;
-console.log("SELECTED ENV:", selectedEnvironment);
-console.log("ALL ENVIRONMENTS:", appState.environments);
+
     if (!selectedEnvironment) {
         return value;
     }

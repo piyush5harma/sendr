@@ -30,7 +30,7 @@ export function createKeyValueRow(type) {
 
     removeButton.classList.add("remove-row");
 
-    removeButton.textContent = "Ã—";
+    removeButton.textContent = "×";
 
     row.appendChild(keyInput);
     row.appendChild(valueInput);
