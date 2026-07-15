@@ -59,22 +59,38 @@ export function initSendRequest() {
 
         const body = document.getElementById("requestBody").value;
 
-        const contentType =
+        // Validate JSON when the request declares a JSON content type,
+        // or when no Content-Type is set (server will auto-detect JSON).
+        const hasExplicitContentType =
             resolvedHeaders["Content-Type"] ||
             resolvedHeaders["content-type"] ||
             "";
 
-        // Only validate JSON when the request declares a JSON content type.
+        const isJsonContentType =
+            hasExplicitContentType.includes("application/json");
+
+        const noContentTypeSet =
+            !hasExplicitContentType;
+
         if (
             body.trim() &&
-            contentType.includes("application/json")
+            (isJsonContentType || noContentTypeSet)
         ) {
-            try {
-                JSON.parse(body);
-            }
-            catch {
-                alert("Request body contains invalid JSON");
-                return;
+            // Only validate if it looks like the user intended JSON
+            // (starts with { or [)
+            const trimmed = body.trim();
+            if (
+                isJsonContentType ||
+                trimmed.startsWith("{") ||
+                trimmed.startsWith("[")
+            ) {
+                try {
+                    JSON.parse(body);
+                }
+                catch {
+                    alert("Request body contains invalid JSON");
+                    return;
+                }
             }
         }
 

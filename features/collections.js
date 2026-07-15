@@ -1,4 +1,4 @@
-import { appState } from "./state.js";
+﻿import { appState } from "./state.js";
 import { collectRequestFromEditor } from "./requestLoader.js";
 
 const saveBtn = document.getElementById("saveBtn");
@@ -48,7 +48,7 @@ function renderCollections() {
             "delete-collection"
         );
 
-        deleteCollectionBtn.textContent = "Ã—";
+        deleteCollectionBtn.innerHTML = "&times;";
 
         title.appendChild(deleteCollectionBtn);
         collection.appendChild(title);
@@ -83,7 +83,7 @@ function renderCollections() {
                     document.createElement("button");
 
                 deleteRequestBtn.classList.add("delete-request");
-                deleteRequestBtn.textContent = "Ã—";
+                deleteRequestBtn.innerHTML = "&times;";
 
                 requestItem.appendChild(deleteRequestBtn);
 

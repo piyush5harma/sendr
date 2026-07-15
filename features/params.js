@@ -1,4 +1,4 @@
-export const paramsContainer =
+﻿export const paramsContainer =
     document.getElementById("paramsContainer");
 
 export const headersContainer =
@@ -30,7 +30,7 @@ export function createKeyValueRow(type) {
 
     removeButton.classList.add("remove-row");
 
-    removeButton.textContent = "×";
+    removeButton.innerHTML = "&times;";
 
     row.appendChild(keyInput);
     row.appendChild(valueInput);

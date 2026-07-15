@@ -127,6 +127,26 @@ else if (
 
 }
 
+        // AUTO-DETECT CONTENT-TYPE (like Postman)
+        // If the user provided a body but no Content-Type header,
+        // auto-set it based on whether the body looks like valid JSON.
+
+        if (
+            normalizedMethod !== "GET" &&
+            body &&
+            !headers["Content-Type"] &&
+            !headers["content-type"]
+        ) {
+            try {
+                JSON.parse(body);
+                headers["Content-Type"] = "application/json";
+            } catch {
+                // Not valid JSON, default to text/plain
+                headers["Content-Type"] = "text/plain";
+            }
+        }
+
+
         // BUILD TARGET REQUEST
 
         const fetchConfig = {

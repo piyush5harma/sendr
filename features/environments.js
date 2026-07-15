@@ -1,4 +1,4 @@
-import { appState } from "./state.js";
+﻿import { appState } from "./state.js";
 
 const environmentSelect =
     document.getElementById("environmentSelect");
@@ -73,7 +73,7 @@ function createEnvironmentVariableRow(key = "", value = "") {
         "remove-environment-variable"
     );
 
-    removeButton.textContent = "×";
+    removeButton.innerHTML = "&times;";
 
     row.appendChild(keyInput);
     row.appendChild(valueInput);
