@@ -1,0 +1,646 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    display: flex;
+
+    background: #0d0d0d;
+    color: #e5e5e5;
+
+    font-family: Arial, sans-serif;
+}
+
+
+/* SIDEBAR */
+
+.sidebar {
+    width: 230px;
+    height: 100vh;
+
+    padding: 20px;
+
+    background: #111;
+    border-right: 1px solid #292929;
+}
+
+.sidebar h1 {
+    margin-bottom: 25px;
+}
+
+.sidebar button {
+    width: 100%;
+
+    padding: 10px;
+
+    background: #1a1a1a;
+    color: white;
+
+    border: 1px solid #333;
+
+    cursor: pointer;
+}
+
+.sidebar-title {
+    margin-top: 30px;
+    margin-bottom: 15px;
+
+    font-size: 11px;
+    color: #666;
+}
+
+.empty-message {
+    color: #555;
+    font-size: 13px;
+}
+
+
+/* MAIN */
+
+main {
+    flex: 1;
+}
+
+header {
+    height: 65px;
+
+    padding: 0 30px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    border-bottom: 1px solid #292929;
+}
+
+header h2 {
+    font-size: 15px;
+}
+
+.save-btn {
+    padding: 8px 20px;
+
+    background: #181818;
+    color: white;
+
+    border: 1px solid #333;
+
+    cursor: pointer;
+}
+
+
+/* WORKSPACE */
+
+.workspace {
+    max-width: 1100px;
+
+    margin: auto;
+    padding: 30px;
+}
+
+
+/* REQUEST BAR */
+
+.request-bar {
+    display: flex;
+    gap: 8px;
+}
+
+.request-bar select,
+.request-bar input,
+.request-bar button {
+    height: 44px;
+
+    background: #151515;
+    color: white;
+
+    border: 1px solid #2a2a2a;
+}
+
+.request-bar select {
+    width: 110px;
+    padding: 0 10px;
+}
+
+.request-bar input {
+    flex: 1;
+
+    padding: 0 15px;
+
+    outline: none;
+}
+
+#sendBtn {
+    width: 100px;
+
+    background: white;
+    color: black;
+
+    font-weight: bold;
+
+    cursor: pointer;
+}
+
+
+/* REQUEST PANEL */
+
+.request-panel,
+.response-panel {
+    margin-top: 20px;
+
+    background: #111;
+
+    border: 1px solid #292929;
+}
+
+.tabs {
+    display: flex;
+
+    border-bottom: 1px solid #292929;
+}
+
+.tab {
+    padding: 14px 20px;
+
+    background: transparent;
+    color: #777;
+
+    border: none;
+
+    cursor: pointer;
+}
+
+.tab.active {
+    color: white;
+
+    border-bottom: 2px solid white;
+}
+
+.tab-content {
+    display: none;
+
+    min-height: 180px;
+
+    padding: 20px;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+
+/* KEY VALUE INPUTS */
+
+.key-value-row {
+    display: flex;
+
+    gap: 10px;
+}
+
+.key-value-row input {
+    flex: 1;
+
+    padding: 12px;
+
+    background: #171717;
+    color: white;
+
+    border: 1px solid #303030;
+
+    outline: none;
+}
+
+
+/* AUTH */
+
+#authType {
+    width: 250px;
+
+    padding: 10px;
+
+    background: #171717;
+    color: white;
+
+    border: 1px solid #303030;
+}
+
+
+/* BODY */
+
+textarea {
+    width: 100%;
+    height: 200px;
+
+    padding: 15px;
+
+    background: #0d0d0d;
+    color: white;
+
+    border: 1px solid #303030;
+
+    outline: none;
+    resize: vertical;
+
+    font-family: monospace;
+}
+
+
+/* RESPONSE */
+
+.response-header {
+    padding: 15px 20px;
+
+    display: flex;
+    justify-content: space-between;
+
+    border-bottom: 1px solid #292929;
+}
+
+.response-header h3 {
+    font-size: 14px;
+}
+
+.response-header span {
+    margin-left: 20px;
+
+    color: #777;
+
+    font-size: 12px;
+}
+
+/* #responseBody {
+    min-height: 250px;
+
+    padding: 20px;
+
+    color: #999;
+
+    font-family: monospace;
+} */
+.response-tabs {
+    display: flex;
+    border-bottom: 1px solid #292929;
+}
+
+.response-tab {
+    padding: 12px 20px;
+
+    background: transparent;
+    color: #777;
+
+    border: none;
+
+    cursor: pointer;
+}
+
+.response-tab.active {
+    color: white;
+    border-bottom: 2px solid white;
+}
+
+.hidden {
+    display: none;
+}
+
+#responseBody,
+#responseHeaders {
+    min-height: 250px;
+
+    padding: 20px;
+
+    color: #999;
+
+    font-family: monospace;
+
+    overflow: auto;
+}
+
+.environment-section {
+    margin-top: 30px;
+}
+
+#environmentSelect {
+    width: 100%;
+
+    padding: 10px;
+
+    margin-bottom: 8px;
+
+    background: #171717;
+    color: white;
+
+    border: 1px solid #303030;
+}
+
+#manageEnvironment {
+    width: 100%;
+}
+
+.key-value-row {
+    margin-bottom: 10px;
+}
+
+.remove-row {
+    width: 40px;
+
+    background: #171717;
+    color: #777;
+
+    border: 1px solid #303030;
+
+    cursor: pointer;
+
+    font-size: 18px;
+}
+
+.remove-row:hover {
+    color: white;
+}
+
+.add-row-btn {
+    padding: 8px 14px;
+
+    background: #171717;
+    color: #aaa;
+
+    border: 1px solid #303030;
+
+    cursor: pointer;
+}
+
+.add-row-btn:hover {
+    color: white;
+}
+
+#authFields {
+    margin-top: 15px;
+
+    display: flex;
+    gap: 10px;
+}
+
+#authFields input {
+    flex: 1;
+
+    padding: 12px;
+
+    background: #171717;
+    color: white;
+
+    border: 1px solid #303030;
+
+    outline: none;
+}
+
+/* COLLECTIONS */
+
+.collection {
+    margin-bottom: 12px;
+}
+
+.collection-title {
+    padding: 8px 6px;
+
+    color: #aaa;
+
+    font-size: 12px;
+    font-weight: bold;
+
+    text-transform: uppercase;
+}
+
+.saved-request {
+    padding: 8px 10px;
+    margin: 2px 0;
+
+    color: #ccc;
+
+    font-size: 13px;
+
+    border-radius: 4px;
+
+    cursor: pointer;
+
+    transition: background 0.2s;
+}
+
+.saved-request:hover {
+    background: #1c1c1c;
+    color: white;
+}
+
+.saved-request::before {
+    content: "→";
+
+    margin-right: 8px;
+
+    color: #666;
+}
+
+.saved-request {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    padding: 8px;
+
+    cursor: pointer;
+
+    border-radius: 4px;
+}
+
+.saved-request:hover {
+    background: #1c1c1c;
+}
+
+.method-badge {
+    width: 45px;
+
+    font-size: 10px;
+    font-weight: bold;
+}
+
+.method-get {
+    color: #61affe;
+}
+
+.method-post {
+    color: #49cc90;
+}
+
+.method-put {
+    color: #fca130;
+}
+
+.method-patch {
+    color: #c586c0;
+}
+
+.method-delete {
+    color: #f93e3e;
+}
+
+/* ENVIRONMENT MODAL */
+
+.modal {
+    position: fixed;
+    inset: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: rgba(0, 0, 0, 0.7);
+
+    z-index: 1000;
+}
+
+.modal.hidden {
+    display: none;
+}
+
+.modal-content {
+    width: 500px;
+
+    padding: 20px;
+
+    background: #111;
+
+    border: 1px solid #303030;
+    border-radius: 6px;
+}
+
+.modal-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    margin-bottom: 20px;
+}
+
+.modal-header button {
+    background: transparent;
+    color: #777;
+
+    border: none;
+
+    font-size: 22px;
+
+    cursor: pointer;
+}
+
+#environmentName {
+    width: 100%;
+
+    padding: 12px;
+    margin-bottom: 15px;
+
+    background: #171717;
+    color: white;
+
+    border: 1px solid #303030;
+
+    outline: none;
+}
+
+.environment-variable-row {
+    display: flex;
+    gap: 8px;
+
+    margin-bottom: 8px;
+}
+
+.environment-variable-row input {
+    flex: 1;
+
+    padding: 10px;
+
+    background: #171717;
+    color: white;
+
+    border: 1px solid #303030;
+
+    outline: none;
+}
+
+.environment-variable-row button {
+    width: 40px;
+
+    background: #171717;
+    color: #999;
+
+    border: 1px solid #303030;
+
+    cursor: pointer;
+}
+
+#addEnvironmentVariable,
+#saveEnvironment, #deleteEnvironment {
+    padding: 10px 15px;
+    margin-top: 10px;
+
+    background: #181818;
+    color: white;
+
+    border: 1px solid #333;
+
+    cursor: pointer;
+}
+#deleteEnvironment {
+    color: #ff6b6b;
+}
+#saveEnvironment {
+    float: right;
+
+    background: white;
+    color: black;
+}
+
+.delete-request {
+    margin-left: auto;
+
+    background: transparent;
+    color: #666;
+
+    border: none;
+
+    font-size: 18px;
+
+    cursor: pointer;
+}
+
+.delete-request:hover {
+    color: #ff6b6b;
+}
+
+.request-name {
+    cursor: default;
+}
+
+.request-name:hover {
+    color: white;
+}
+.collection-title {
+    display: flex;
+    align-items: center;
+}
+
+.delete-collection {
+    margin-left: auto;
+
+    background: transparent;
+    color: #555;
+
+    border: none;
+
+    font-size: 18px;
+
+    cursor: pointer;
+}
+
+.delete-collection:hover {
+    color: #ff6b6b;
+}

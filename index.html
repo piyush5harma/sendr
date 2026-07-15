@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Sendr</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <aside class="sidebar">
+
+        <h1>Sendr</h1>
+
+        <button id="newRequestBtn">+ New Request</button>
+
+        <p class="sidebar-title">COLLECTIONS</p>
+
+        <div id="collectionsContainer">
+
+    <div class="empty-message">
+        No collections yet
+    </div>
+
+</div>
+<div class="history-section">
+
+    <p class="sidebar-title">HISTORY</p>
+
+    <div id="historyContainer">
+
+        <div class="empty-message">
+            No request history
+        </div>
+
+    </div>
+
+</div>
+        <div class="environment-section">
+
+    <p class="sidebar-title">ENVIRONMENT</p>
+
+    <select id="environmentSelect">
+
+        <option value="">
+            No Environment
+        </option>
+
+    </select>
+
+    <button id="manageEnvironment">
+        Manage Environment
+    </button>
+
+</div>
+    </aside>
+
+
+    <main>
+
+        <header>
+            <h2>Untitled Request</h2>
+
+            <button id="saveBtn" class="save-btn">Save</button>
+        </header>
+
+
+        <section class="workspace">
+
+            <div class="request-bar">
+
+                <select id="method">
+                    <option>GET</option>
+                    <option>POST</option>
+                    <option>PUT</option>
+                    <option>PATCH</option>
+                    <option>DELETE</option>
+                </select>
+
+                <input id="url" type="text" placeholder="Enter request URL">
+
+                <button id="sendBtn">Send</button>
+
+            </div>
+
+
+            <div class="request-panel">
+
+                <div class="tabs">
+
+                    <button class="tab active" data-tab="params">
+                        Params
+                    </button>
+
+                    <button class="tab" data-tab="auth">
+                        Auth
+                    </button>
+
+                    <button class="tab" data-tab="headers">
+                        Headers
+                    </button>
+
+                    <button class="tab" data-tab="body">
+                        Body
+                    </button>
+
+                </div>
+
+
+<div id="params" class="tab-content active">
+
+    <div id="paramsContainer">
+
+        <div class="key-value-row param-row">
+
+            <input class="param-key" type="text" placeholder="Key">
+
+            <input class="param-value" type="text" placeholder="Value">
+
+            <button class="remove-row">×</button>
+
+        </div>
+
+    </div>
+
+    <button id="addParamBtn" class="add-row-btn">
+        + Add Param
+    </button>
+
+</div>
+
+
+                <div id="auth" class="tab-content">
+
+                    <select id="authType">
+
+                        <option value="none">No Auth</option>
+
+                        <option value="bearer">Bearer Token</option>
+
+                        <option value="basic">Basic Auth</option>
+
+                        <option value="apikey">API Key</option>
+
+                    </select>
+
+                    <div id="authFields"></div>
+
+                </div>
+
+
+<div id="headers" class="tab-content">
+
+    <div id="headersContainer">
+
+        <div class="key-value-row header-row">
+
+            <input class="header-key" type="text" placeholder="Header">
+
+            <input class="header-value" type="text" placeholder="Value">
+
+            <button class="remove-row">×</button>
+
+        </div>
+
+    </div>
+
+    <button id="addHeaderBtn" class="add-row-btn">
+        + Add Header
+    </button>
+
+</div>
+
+
+                <div id="body" class="tab-content">
+
+                    <textarea id="requestBody" placeholder="Enter JSON body"></textarea>
+
+                </div>
+
+            </div>
+
+
+            <div class="response-panel">
+
+                <div class="response-header">
+
+                    <h3>Response</h3>
+
+                    <div class="response-meta">
+
+                        <span id="status">Status: --</span>
+
+                        <span id="time">Time: --</span>
+
+                        <span id="size">Size: --</span>
+
+                    </div>
+
+                </div>
+
+
+                <div class="response-tabs">
+
+                    <button class="response-tab active" data-response-tab="responseBody">
+                        Body
+                    </button>
+
+                    <button class="response-tab" data-response-tab="responseHeaders">
+                        Headers
+                    </button>
+
+                </div>
+
+
+                <pre id="responseBody"> Send a request to see the response </pre>
+
+                <pre id="responseHeaders" class="hidden"></pre>
+            </div>
+
+        </section>
+
+    </main>
+
+    <div id="environmentModal" class="modal hidden">
+
+    <div class="modal-content">
+
+        <div class="modal-header">
+
+            <h3>Manage Environment</h3>
+
+            <button id="closeEnvironmentModal">×</button>
+
+        </div>
+
+        <input
+            id="environmentName"
+            type="text"
+            placeholder="Environment name"
+        >
+
+        <div id="environmentVariables"></div>
+
+        <button id="addEnvironmentVariable">
+            + Add Variable
+        </button>
+        <button id="deleteEnvironment">
+    Delete Environment
+</button>
+        <button id="saveEnvironment">
+            Save Environment
+        </button>
+
+    </div>
+
+</div>
+    <script type="module" src="script.js"></script>
+
+</body>
+
+</html>
