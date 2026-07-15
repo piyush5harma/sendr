@@ -16,7 +16,7 @@ Before running Sendr, make sure the following are installed:
 
 ### Clone the Repository
 
-Ideally create a new folder then open the new folder in vs code, open terminal then run the this command:-
+Ideally, create a new folder and open it in VS Code. Then open the terminal and run this command:
 
 git clone https://github.com/piyush5harma/sendr.git
 
@@ -189,6 +189,21 @@ This separates request execution from the browser interface and avoids directly 
 
 ---
 
+### Quick Bonus Verification
+
+Judges can verify the creative features in approximately one minute:
+
+1. Create an environment and define a `baseUrl` variable.
+2. Send a request using `{{baseUrl}}/get?test=sendr`.
+3. Save the request inside a collection.
+4. Load the saved request from the collection.
+5. Send the request and open it again from request history.
+6. Configure Bearer Token authentication from the Auth tab.
+
+These steps demonstrate environment resolution, reusable collections, request restoration, automatic history tracking, and authentication support.
+
+---
+
 ## 6. Code Quality — Bonus Evaluation
 
 Sendr follows a modular JavaScript architecture.
@@ -197,6 +212,7 @@ Feature-specific logic is separated into the `features` directory.
 
 Project structure:
 
+```text
 sendr/
 ├── features/
 │   ├── auth.js
@@ -208,12 +224,18 @@ sendr/
 │   ├── sendRequest.js
 │   ├── state.js
 │   └── tabs.js
+├── docs/
+│   └── screenshots/
 ├── index.html
 ├── script.js
 ├── server.js
 ├── style.css
 ├── package.json
+├── package-lock.json
+├── JUDGES_GUIDE.md
+├── LICENSE
 └── README.md
+```
 
 Each module has a focused responsibility.
 
